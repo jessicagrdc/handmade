@@ -1,4 +1,4 @@
-package br.com.wtag.handmade.handmade;
+package br.com.wtag.handmade;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

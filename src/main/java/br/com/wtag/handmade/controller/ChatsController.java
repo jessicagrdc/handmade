@@ -1,5 +1,4 @@
-package br.com.wtag.handmade.handmade.controller;
-
+package br.com.wtag.handmade.controller;
 
 import java.util.List;
 
@@ -13,36 +12,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.wtag.handmade.handmade.model.entities.Comentarios;
-import br.com.wtag.handmade.handmade.model.repositories.ComentariosRepository;
+import br.com.wtag.handmade.model.entities.Chats;
+import br.com.wtag.handmade.model.repositories.ChatsRepository;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @RestController
-@RequestMapping("/comentarios")
-public class ComentariosController {
-
+@RequestMapping("/chats")
+public class ChatsController {
+ 
 	@Autowired
-	private ComentariosRepository comentariosRepository;
+	private ChatsRepository chatsRepository;
 	
 	@PostMapping
-	public Comentarios create(@RequestBody Comentarios comentarios) {
-		return comentariosRepository.save(comentarios);
-	}	
+	public Chats create(@RequestBody Chats chats) {
+		return chatsRepository.save(chats);
+	}
 	
 	@GetMapping
-	public List<Comentarios> read() {
-		return comentariosRepository.findAll();
-	}	
+	public List<Chats> read() {
+		return chatsRepository.findAll();
+	}
 	
 	@PutMapping
-	public Comentarios update(@RequestBody Comentarios comentarios) {
-		return comentariosRepository.save(comentarios);
-	}	
+	public Chats update(@RequestBody Chats chats) {
+		return chatsRepository.save(chats);
+	}
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
-		comentariosRepository.deleteById(id);
+		chatsRepository.deleteById(id);
 	}
 	
 }

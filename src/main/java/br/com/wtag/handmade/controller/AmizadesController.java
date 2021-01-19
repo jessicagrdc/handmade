@@ -1,4 +1,4 @@
-package br.com.wtag.handmade.handmade.controller;
+package br.com.wtag.handmade.controller;
 
 import java.util.List;
 
@@ -12,38 +12,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.wtag.handmade.handmade.model.entities.Usuarios;
-import br.com.wtag.handmade.handmade.model.repositories.UsuariosRepository;
+import br.com.wtag.handmade.model.entities.Amizades;
+import br.com.wtag.handmade.model.repositories.AmizadesRepository;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @RestController
-@RequestMapping("/usuarios")
-public class UsuariosController {
+@RequestMapping("/amizades")
+public class AmizadesController {
 	
-	// version
-
 	@Autowired
-	private UsuariosRepository usuariosRepository;
+	private AmizadesRepository amizadesRepository;
 	
 	@PostMapping
-	public Usuarios create(@RequestBody Usuarios usuarios) {
-		return usuariosRepository.save(usuarios);
-	}		
+	public Amizades create(@RequestBody Amizades amizades) {
+		return amizadesRepository.save(amizades);
+	}
 	
 	@GetMapping
-	public List<Usuarios> read() {
-		return usuariosRepository.findAll();
-	}	
+	public List<Amizades> read() {
+		return amizadesRepository.findAll();
+	}
 	
 	@PutMapping
-	public Usuarios update(@RequestBody Usuarios usuarios) {
-		return usuariosRepository.save(usuarios);
-	}		
+	public Amizades Update(@RequestBody Amizades amizades) {
+		return amizadesRepository.save(amizades);
+	}
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
-		usuariosRepository.deleteById(id);
+		amizadesRepository.deleteById(id);
 	}
 	
 }

@@ -1,4 +1,4 @@
-package br.com.wtag.handmade.handmade.controller;
+package br.com.wtag.handmade.controller;
 
 import java.util.List;
 
@@ -12,33 +12,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.wtag.handmade.handmade.model.entities.Produtos;
-import br.com.wtag.handmade.handmade.model.repositories.ProdutosRepository;
+import br.com.wtag.handmade.model.entities.Mensagens;
+import br.com.wtag.handmade.model.repositories.MensagensRepository;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @RestController
-@RequestMapping("/produtos")
-public class ProdutosController {
-
+@RequestMapping("/mensagens")
+public class MensagensController {
+ 
 	@Autowired
-	private ProdutosRepository produtosRepository;
+	private MensagensRepository mensagensRepository;
 	
 	@PostMapping
-	public Produtos create(@RequestBody Produtos produtos) {
-		return produtosRepository.save(produtos);
+	public Mensagens create(@RequestBody Mensagens mensagens) {
+		return mensagensRepository.save(mensagens);
 	}
+	
 	@GetMapping
-	public List<Produtos> read() {
-		return produtosRepository.findAll();
-	}		
+	public List<Mensagens> read() {
+		return mensagensRepository.findAll();
+	}
+	
 	@PutMapping
-	public Produtos update(@RequestBody Produtos produtos) {
-		return produtosRepository.save(produtos);
-	}		
+	public Mensagens update(@RequestBody Mensagens mensagens) {
+		return mensagensRepository.save(mensagens);
+	}
+	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
-		produtosRepository.deleteById(id);
+		mensagensRepository.deleteById(id);
 	}
 	
 }

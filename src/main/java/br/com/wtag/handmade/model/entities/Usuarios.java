@@ -1,4 +1,4 @@
-package br.com.wtag.handmade.handmade.model.entities;
+package br.com.wtag.handmade.model.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
